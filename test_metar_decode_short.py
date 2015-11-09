@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 #  This is a minimal sample script showing how the individual data
-#  are accessed from the decoded report.  To produce the standard text 
+#  are accessed from the decoded report.  To produce the standard text
 #  summary of a report, the string() method of the Metar object.
 #
 #  The parsed data are stored as attributes of a Metar object.
@@ -9,7 +9,7 @@
 #  metar.Datatypes classes, or lists of tuples of these scalars.
 #  Here's a summary, adapted from the comments in the Metar.Metar.__init__()
 #  method:
-# 
+#
 #    Attribute       Comments [data type]
 #    --------------  --------------------
 #    code             original METAR code [string]
@@ -65,17 +65,17 @@
 #  The metar.Datatypes classes (temperature, pressure, precipitation,
 #  speed, direction) describe an observation and its units.  They provide
 #  value() and string() methods to that return numerical and string
-#  representations of the data in any of a number of supported units.  
-# 
+#  representations of the data in any of a number of supported units.
+#
 #  (You're going to have to study the source code for more details,
 #  like the available methods and supported unit conversions for the
-#  metar.Datatypes objects, etc..)  
+#  metar.Datatypes objects, etc..)
 
 #  In particular, look at the Metar.string()
-#  method, and the functions it calls.  
+#  method, and the functions it calls.
 #
-#  Feb 4, 2005 
-#  Tom Pollard 
+#  Feb 4, 2005
+#  Tom Pollard
 #
 from metar.Metar import Metar
 
@@ -113,13 +113,12 @@ from metar.Metar import Metar
 #code='METAR LEMD 222200Z 35007KT 310V020 CAVOK 27/10 Q1015 NOSIG='
 #code='METAR UMMM 151230Z 08004MPS 9999 FEW025 OVC100 07/00 Q1041 R12/CLRD60 NOSIG RMK QFE760'
 #code='METAR UMMS 151230Z 01002MPS 010V070 CAVOK 09/00 Q1042 R13/CLRD// NOSIG'
-code='METAR EYKA 151250Z 10007KT 060V130 CAVOK 09/00 Q1042 R08/090095'
+# code='METAR EYKA 151250Z 10007KT 060V130 CAVOK 09/00 Q1042 R08/090095'
 #code='METAR UMMS 151230Z 01002MPS 010V070 CAVOK 09/00 Q1042 R88CLRD95 NOSIG'
 #code='METAR UMMS 151230Z 01002MPS 010V070 CAVOK 09/00 Q1042 R24CLRD93 NOSIG'
 #code='METAR UMMS 151230Z 01002MPS 010V070 CAVOK 09/00 Q1042 R99/421594 NOSIG'
 #code='METAR UMMS 151230Z 01002MPS 010V070 CAVOK 09/00 Q1042 R99/SNOCLO NOSIG'
 #code='METAR LTAJ 151220Z 24012KT 9999 SCT040 BKN100 14/04 Q1017 TEMPO Q1019 TEMPO 27015G25KT -TSRA'
-code='METAR BIAR 151200Z 16011KT CAVOK 04/M03 Q1021 R01/790157 RWY SANDED'
 code='SPECI KBTV 151208Z 36007KT 1SM R15/P6000FT -SN BR BKN006 OVC019 M01/M03 A2965'
 
 print "-----------------------------------------------------------------------"
@@ -140,4 +139,3 @@ metar_header['origin_date'] = obs.time.day
 metar_header['origin_hours'] = obs.time.isoformat()[11:13]
 metar_header['origin_minutes'] = obs.time.isoformat()[14:16]
 print metar_header
-
